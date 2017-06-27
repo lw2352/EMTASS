@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CSUST.Net.TSocketServerBase&lt;TSession, TDatabase&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>C0UAAIESmCZhFEiUIiNiVLjoAhGMX1UcIkBVOun3ooo=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CSUST.Net.TSessionCoreInfo" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAIAABwAAAAAAAAAQIIAhAAAQAAQAABAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUST.Net.TSessionBase" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEIAQCCEghAQAqAAABQqgAwCAAAASAAAFCCzAgAg=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CSUST.Net.BufferManager" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQBEAAAACQBAAAQAAAAAAAAAAAQgAAAAAAAADBAAAg=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUST.Net.TDatabaseBase" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAQAAAIEAAAAECABCAAAAAABAAAACABQDCCAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CSUST.Net.TSqlServerBase" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUST.Net.TOleDatabaseBase" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUST.Net.TExceptionEventArgs" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUST.Net.TSessionEventArgs" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAQAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUST.Net.TSessionExceptionEventArgs" Collapsed="true">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMTASS_ServerDemo.Program" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMTASS_ServerDemo.SocketServerDemo" Collapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiAjAAgCQLAQQhFQ2ACgAKIDBSBAUTAZBAAaAAmAAAA=</HashCode>
+      <FileName>ServerDemoForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMTASS_ServerDemo.TTestSession" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAABAAAAAAAAAACAAAAAQAAAAA=</HashCode>
+      <FileName>ServerDemoForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMTASS_ServerDemo.TTestAccessDatabase" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAQAAACA=</HashCode>
+      <FileName>ServerDemoForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMTASS_ServerDemo.Properties.Resources" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMTASS_ServerDemo.Properties.Settings" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CSUST.Net.ISessionEvent" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAACAAgAAAAIAAAAAAgAAAAAAAAAAAAAAgAAAg=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CSUST.Net.IDatabaseEvent" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAACABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CSUST.Net.TDisconnectType" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAIAAABAAAAAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CSUST.Net.TSessionState" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAQAAAAAAAAAgAAAAAACAAAA=</HashCode>
+      <FileName>EMTASS2_1.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
