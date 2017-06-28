@@ -62,6 +62,7 @@ namespace CSUST.Net
 
         private bool m_disposed = false;
 
+        //ManualResetEvent:通知一个或多个正在等待的线程已发生事件。
         private ManualResetEvent m_checkAcceptListenResetEvent;
         private ManualResetEvent m_checkSessionTableResetEvent;
         private ManualResetEvent m_checkDatagramQueueResetEvent;
@@ -303,7 +304,7 @@ namespace CSUST.Net
             get
             {
                 List<TSessionCoreInfo> sessionList = new List<TSessionCoreInfo>();
-                lock (m_sessionTable)
+                lock (m_sessionTable)//?这个m_sessionTable是从哪里来的
                 {
                     foreach (TSession session in m_sessionTable.Values)
                     {
@@ -502,6 +503,7 @@ namespace CSUST.Net
                     }
                 }
                
+                //开启socket，创建3个工作线程
                 if (!this.CreateServerSocket()) return false;
                 if (!ThreadPool.QueueUserWorkItem(this.CheckDatagramQueue)) return false;//数据包处理线程
                 if (!ThreadPool.QueueUserWorkItem(this.StartServerListen)) return false;//客户端连接侦听线程
@@ -747,7 +749,7 @@ namespace CSUST.Net
                 }
             }
 
-            m_checkAcceptListenResetEvent.Set();
+            m_checkAcceptListenResetEvent.Set();//Set()将事件状态设置为终止状态，允许一个或多个等待线程继续。 （继承自 EventWaitHandle。）
         }
 
         private void CloseServerSocket()
@@ -883,7 +885,7 @@ namespace CSUST.Net
         /// </summary>
         private void CheckDatagramQueue(object state)
         {
-            m_checkDatagramQueueResetEvent.Reset();
+            m_checkDatagramQueueResetEvent.Reset(); //Reset()将事件状态设置为非终止状态，导致线程阻止。
 
             while (!m_serverClosed)
             {
