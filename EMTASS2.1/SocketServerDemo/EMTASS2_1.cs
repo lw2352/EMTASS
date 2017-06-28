@@ -503,9 +503,9 @@ namespace CSUST.Net
                 }
                
                 if (!this.CreateServerSocket()) return false;
-                if (!ThreadPool.QueueUserWorkItem(this.CheckDatagramQueue)) return false;
-                if (!ThreadPool.QueueUserWorkItem(this.StartServerListen)) return false;
-                if (!ThreadPool.QueueUserWorkItem(this.CheckSessionTable)) return false;
+                if (!ThreadPool.QueueUserWorkItem(this.CheckDatagramQueue)) return false;//数据包处理线程
+                if (!ThreadPool.QueueUserWorkItem(this.StartServerListen)) return false;//客户端连接侦听线程
+                if (!ThreadPool.QueueUserWorkItem(this.CheckSessionTable)) return false;//会话表检测线程 
 
                 m_serverClosed = false;
                 m_serverListenPaused = false;
@@ -1598,7 +1598,8 @@ namespace CSUST.Net
             int subIndex = bufferOffset;  // 缓冲区下标
             while (subIndex < readBytesLength + bufferOffset)
             {
-                if (m_receiveBuffer[subIndex] == '<')  // 数据包开始字符<，前面包文作废
+                //if (m_receiveBuffer[subIndex] == '<')  // 数据包开始字符<，前面包文作废
+                if (m_receiveBuffer[subIndex] == 0xA5 && m_receiveBuffer[subIndex+1] == 0xA5)
                 {
                     if (hasHeadDelimiter || length > 0)  // 如果 < 前面有数据，则认为错误包
                     {
@@ -1611,7 +1612,8 @@ namespace CSUST.Net
                     length = headDelimiter;   // 新包的长度（即<）
                     hasHeadDelimiter = true;  // 新包有开始字符
                 }
-                else if (m_receiveBuffer[subIndex] == '>')  // 数据包的结束字符>
+                //else if (m_receiveBuffer[subIndex] == '>')  // 数据包的结束字符>
+                else if (m_receiveBuffer[subIndex] == 0x5A && m_receiveBuffer[subIndex-1] == 0x5A)
                 {
                     if (hasHeadDelimiter)  // 两个缓冲区中有开始字符<
                     {
@@ -1887,6 +1889,7 @@ namespace CSUST.Net
         }
     }
 
+    #region 数据库抽象类
     /// <summary>
     /// 数据库抽象类, 只给出了几个抽象方法, 派生后需要增加实现
     /// 1) Open方法, 给出具体的SqlConnection/OleDbConnection
@@ -2149,4 +2152,6 @@ namespace CSUST.Net
         Shutdown,  // session is shutdownling
         Closed     // session is closed
     }
+
+    #endregion
 }
