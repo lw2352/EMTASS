@@ -63,6 +63,7 @@ namespace EMTASS_ServerDemo
             m_socketServer.ShowDebugMessage += this.SocketServer_ShowDebugMessage;
         }
 
+        //启动服务器
         private void bn_Start_Click(object sender, EventArgs e)
         {
 
@@ -307,6 +308,7 @@ namespace EMTASS_ServerDemo
                     Console.WriteLine("ok;\r\n");
                     break;
             }
+            base.OnDatagramHandled();  // 模拟已经处理（存储）了数据包
             base.OnDatagramHandled();  // 模拟已经处理（存储）了数据包
 
             //past

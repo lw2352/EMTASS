@@ -696,7 +696,7 @@ namespace CSUST.Net
         }
 
         /// <summary>
-        /// 侦听客户端连接请求
+        /// 1.侦听客户端连接请求线程
         /// </summary>
         private void StartServerListen(object state)
         {
@@ -827,7 +827,7 @@ namespace CSUST.Net
         }
 
         /// <summary>
-        /// 资源清理线程, 分若干步完成
+        /// 3.资源清理线程, 分若干步完成
         /// </summary>
         private void CheckSessionTable(object state)
         {
@@ -881,7 +881,7 @@ namespace CSUST.Net
         }
 
         /// <summary>
-        /// 数据包处理线程
+        /// 2.数据包处理线程
         /// </summary>
         private void CheckDatagramQueue(object state)
         {
