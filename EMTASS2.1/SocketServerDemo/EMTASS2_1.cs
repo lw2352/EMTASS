@@ -57,7 +57,7 @@ namespace CSUST.Net
         private int m_maxListenQueueLength = 16;
         private int m_maxSameIPCount = 64;
 
-        private Dictionary<int, TSession> m_sessionTable;
+        private Dictionary<int, TSession> m_sessionTable; //会话队列
         private TDatabase m_databaseObj = null;
 
         private bool m_disposed = false;
@@ -304,7 +304,7 @@ namespace CSUST.Net
             get
             {
                 List<TSessionCoreInfo> sessionList = new List<TSessionCoreInfo>();
-                lock (m_sessionTable)//?这个m_sessionTable是从哪里来的
+                lock (m_sessionTable)
                 {
                     foreach (TSession session in m_sessionTable.Values)
                     {
@@ -1253,7 +1253,7 @@ namespace CSUST.Net
         private byte[] m_datagramBuffer;
 
         private TDatabaseBase m_databaseObj;
-        private Queue<byte[]> m_datagramQueue;
+        private Queue<byte[]> m_datagramQueue;//m_datagramQueue包队列：字节数组的队列（Queue<>泛型），保存了当前会话的数据包（字节数组），等待处理线程分析与处理。
 
         #endregion
 
@@ -1395,12 +1395,12 @@ namespace CSUST.Net
         {
             lock (this)
             {
-                if (this.State != TSessionState.Active || m_datagramQueue.Count == 0)
+                if (this.State != TSessionState.Active || m_datagramQueue.Count == 0)//Count 获取 Queue<T> 中包含的元素数 
                 {
                     return;
                 }
 
-                byte[] datagramBytes = m_datagramQueue.Dequeue();
+                byte[] datagramBytes = m_datagramQueue.Dequeue();// Dequeue 移除并返回位于 Queue<T> 开始处的对象。 
                 this.AnalyzeDatagram(datagramBytes);
             }
         }
@@ -1431,6 +1431,10 @@ namespace CSUST.Net
             }
         }
 
+        /// <summary>
+        /// 发送确认消息给客户端
+        /// </summary>
+        /// <param name="datagramText"></param>
         public void SendDatagram(string datagramText)
         {
             lock (this)
@@ -1692,7 +1696,7 @@ namespace CSUST.Net
                 m_datagramBuffer = null;
             }
 
-            m_datagramQueue.Enqueue(datagramBytes);
+            m_datagramQueue.Enqueue(datagramBytes);//Enqueue 将对象添加到 Queue<T> 的结尾处。 
         }
 
         protected virtual void OnDatagramDelimiterError()
