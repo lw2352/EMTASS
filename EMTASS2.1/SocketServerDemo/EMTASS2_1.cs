@@ -1253,7 +1253,7 @@ namespace CSUST.Net
         private byte[] m_datagramBuffer;
 
         private TDatabaseBase m_databaseObj;
-        private Queue<byte[]> m_datagramQueue;//m_datagramQueue包队列：字节数组的队列（Queue<>泛型），保存了当前会话的数据包（字节数组），等待处理线程分析与处理。
+        public Queue<byte[]> m_datagramQueue;//m_datagramQueue包队列：字节数组的队列（Queue<>泛型），保存了当前会话的数据包（字节数组），等待处理线程分析与处理。
 
         #endregion
 
